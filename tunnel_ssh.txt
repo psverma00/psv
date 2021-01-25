@@ -1,0 +1,14 @@
+
+Open a terminal and type the following command and enter the password you use to login on your laptop
+
+ssh   -N   -D 1080   localhost
+
+Leave this terminal open and go to another terminal to login into the remote machine as follows 
+
+ssh   -R 7777:localhost:1080  <username>@hawk.hww.hlrs.de   
+
+This will create a tunnel from your laptop to the remote machine. 
+
+Now Suppose you want to do the git clone from GIT HUB, then do the following
+
+git -c http.proxy='socks5://localhost:7777' clone http://github.com/QEF/q-e.git
